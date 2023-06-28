@@ -1,15 +1,13 @@
-import TestComponent from "./components/TestComponent";
-import TestComponentMobile from "./components/TestComponentMobile";
-import TestComponentWeb from "./components/TestComponentWeb";
+import CommunicationTemplates from './components/CommunicationTemplates';
+import CommunicationTemplateTestpage from './components/CommunicationTemplateTestpage';
+import MailCommunicationTemplates from './components/MailCommunicationTemplates';
+import SMSCommunicationTemplates from './components/SMSCommunicationTemplates';
+import WhatsappCommunicationTemplates from './components/WhatsappCommunicationTemplates';
 
 export const ComponentRegistry = {
-  TestComponents      : { comp: TestComponent },
-  TestComponentsMobile: {
-    comp: TestComponentMobile,
-    web : false
-  },
-  TestComponentsWeb: {
-    comp  : TestComponentWeb,
-    mobile: false
-  }
+  CommunicationTemplates      : { comp: CommunicationTemplates },
+  CommunicationTemplateTestpage      : { comp: CommunicationTemplateTestpage },
+  MailCommunicationTemplates      : { comp: MailCommunicationTemplates },
+  SMSCommunicationTemplates      : { comp: SMSCommunicationTemplates },
+  WhatsappCommunicationTemplates      : { comp: WhatsappCommunicationTemplates },
 };
