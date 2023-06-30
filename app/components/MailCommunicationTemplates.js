@@ -1,6 +1,7 @@
+import { CoreDataTable, FORM_IDS } from "@wrappid/core";
+
 import CommunicationTemplateTestpage from "./CommunicationTemplateTestpage";
 import { communicationTypes } from "../constants/constants";
-import { CoreDataTable, FORM_IDS } from "@wrappid/core";
 
 export default function MailCommunicationTemplates() {
   const query = { type: communicationTypes.MAIL };

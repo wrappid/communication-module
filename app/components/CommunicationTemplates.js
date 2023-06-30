@@ -3,18 +3,18 @@ import { CoreCustomTabs } from "@wrappid/core";
 export default function CommunicationTemplates() {
   const tabsContent = [
     {
-      comp: "SMSCommunicationTemplates",
-      id: "smsCommunicationTemplate",
+      comp : "SMSCommunicationTemplates",
+      id   : "smsCommunicationTemplate",
       label: "SMS Templates",
     },
     {
-      comp: "MailCommunicationTemplates",
-      id: "mailCommunicationTemplate",
+      comp : "MailCommunicationTemplates",
+      id   : "mailCommunicationTemplate",
       label: "Mail Templates",
     },
     {
-      comp: "WhatsappCommunicationTemplates",
-      id: "whatsappCommunicationTemplate",
+      comp : "WhatsappCommunicationTemplates",
+      id   : "whatsappCommunicationTemplate",
       label: "Whatsapp Templates",
     },
   ];
