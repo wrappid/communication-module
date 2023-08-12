@@ -1,2 +1,1 @@
-
-export const ReducerRegistry = {};
+export const ReducersRegistry = {};

@@ -4,7 +4,7 @@ import MailCommunicationTemplates from "./components/MailCommunicationTemplates"
 import SMSCommunicationTemplates from "./components/SMSCommunicationTemplates";
 import WhatsappCommunicationTemplates from "./components/WhatsappCommunicationTemplates";
 
-export const ComponentRegistry = {
+export const ComponentsRegistry = {
   CommunicationTemplateTestpage : { comp: CommunicationTemplateTestpage },
   CommunicationTemplates        : { comp: CommunicationTemplates },
   MailCommunicationTemplates    : { comp: MailCommunicationTemplates },

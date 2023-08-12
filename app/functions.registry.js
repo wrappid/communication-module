@@ -1,8 +1,6 @@
-// asyncSelect and formSubmitSanitization
-
 import { DefaultLangEditDel, SanCreateCommunicationTemplate, SanEditCommunicationTemplate, SanTestCommunicationTemplate } from "./functions/sanity.functions";
 
-export const FunctionRegistry = {
+export const FunctionsRegistry = {
   DefaultLangEditDel: DefaultLangEditDel,
       
   SanCreateCommunicationTemplate: SanCreateCommunicationTemplate,
