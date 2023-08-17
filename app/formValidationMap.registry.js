@@ -9,7 +9,7 @@ const email = yup
   .trim()
   .matches(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/, "Invalid email");
 
-export const ValidationRegistry = {
+export const ValidationsRegistry = {
   createMailTemplateSchema: {
     contentType  : yup.mixed().required("Content type is required"),
     extraInfo    : yup.object().required("Extra Info is required"),
