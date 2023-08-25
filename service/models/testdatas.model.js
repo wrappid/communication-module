@@ -1,12 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
-    const testdatas = sequelize.define("testdatas", {
+    const TestDatas = sequelize.define("TestDatas", {
         id: {
             autoIncrement: true,
             primaryKey: true,
             type: DataTypes.INTEGER,
         },
         name: {
-            defaultValue: "",
+            // defaultValue: "",
             type: DataTypes.STRING,
         },
     },
@@ -15,5 +15,5 @@ module.exports = (sequelize, DataTypes) => {
         updatedAt: false,
     });
 
-    return testdatas;
+    return TestDatas;
 };
