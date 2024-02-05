@@ -1,11 +1,14 @@
-const otpGenerator = require("otp-generator");
 const {
   communicate,
+  // eslint-disable-next-line no-unused-vars
   configProvider,
   coreConstant,
   databaseActions,
   databaseProvider,
 } = require("@wrappid/service-core");
+// eslint-disable-next-line no-unused-vars
+const otpGenerator = require("otp-generator");
+
 const COMMUNICATION_EMAIL = coreConstant.commType.EMAIL;
 let pendingComms;
 
@@ -60,7 +63,7 @@ module.exports = {
         await databaseActions.update("application","CommunicationHistories",{status: "success"},{where:{id:comms.id}});
       } else {
         await databaseActions.update("application","CommunicationHistories",{status: "faild"},{where:{id:comms.id}});
-        console.log(`OTP sent faild.`);
+        console.log("OTP sent faild.");
       }
     });
 
