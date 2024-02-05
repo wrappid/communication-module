@@ -1,5 +1,6 @@
-const CommTask = require('./tasks/CommTask');
+const CommTask = require("./tasks/CommTask");
+
 const tasksRegistry = {
-    "CommTask": CommTask
+  "CommTask": CommTask
 };
 exports.tasksRegistry = tasksRegistry;
