@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+export const CommunicationHistories = (sequelize: any, DataTypes: any) => {
   const CommunicationHistories = sequelize.define("CommunicationHistories", {
     id: {
       type: DataTypes.INTEGER,
@@ -21,22 +21,20 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       defaultValue: "",
     },
-      
+
     deletedAt: {
       type: "TIMESTAMP",
       allowNull: true,
-    }, 
+    },
     createdAt: {
       type: "TIMESTAMP",
       allowNull: true,
-    }, 
+    },
     updatedAt: {
       type: "TIMESTAMP",
       allowNull: true,
     },
   });
-  
-  
+
   return CommunicationHistories;
 };
-  

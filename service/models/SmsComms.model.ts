@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+export const SmsComms = (sequelize: any, DataTypes: any) => {
   const SmsComms = sequelize.define("SmsComms", {
     id: {
       type: DataTypes.INTEGER,
@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  SmsComms.associate = (models) => {
+  SmsComms.associate = (models: any) => {
     SmsComms.belongsTo(models.Users, {
       foreignKey: "createdBy",
       as: "Owner",

@@ -1,11 +1,11 @@
-const CommunicationHistories = require("./models/CommunicationHistory.model");
-const CommunicationTemplates = require("./models/CommunicationTemplates.model");
-const MailComms = require("./models/MailComms.model");
-const Otps = require("./models/Otp.model");
-const SmsComms = require("./models/SmsComms.model");
-const WhatsAppComms = require("./models/WhatsAppComms.model");
+import { CommunicationHistories } from "./models/CommunicationHistory.model";
+import { CommunicationTemplates } from "./models/CommunicationTemplates.model";
+import { MailComms } from "./models/MailComms.model";
+import { Otps } from "./models/Otp.model";
+import { SmsComms } from "./models/SmsComms.model";
+import { WhatsAppComms } from "./models/WhatsAppComms.model";
 
-const modelsRegistry = {
+const ModelsRegistry = {
   CommunicationHistories: {
     database: "application",
     model: CommunicationHistories,
@@ -32,4 +32,4 @@ const modelsRegistry = {
   },
 };
 
-exports.modelsRegistry = modelsRegistry;
+export default ModelsRegistry;

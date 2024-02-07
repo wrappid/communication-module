@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+export const WhatsAppComms = (sequelize: any, DataTypes: any) => {
   const WhatsAppComms = sequelize.define("WhatsAppComms", {
     id: {
       type: DataTypes.INTEGER,
@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  WhatsAppComms.associate = (models) => {
+  WhatsAppComms.associate = (models: any) => {
     WhatsAppComms.belongsTo(models.Users, {
       foreignKey: "createdBy",
       as: "Owner",

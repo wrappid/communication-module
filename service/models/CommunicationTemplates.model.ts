@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+export const CommunicationTemplates = (sequelize: any, DataTypes: any) => {
   const CommunicationTemplates = sequelize.define("CommunicationTemplates", {
     id: {
       type: DataTypes.INTEGER,
@@ -75,7 +75,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  CommunicationTemplates.associate = (models) => {
+  CommunicationTemplates.associate = (models: any) => {
     CommunicationTemplates.belongsTo(models.Users, {
       foreignKey: "createdBy",
       as: "Owner",

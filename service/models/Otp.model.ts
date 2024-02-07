@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+export const Otps = (sequelize: any, DataTypes: any) => {
   const otp = sequelize.define("Otps", {
     id: {
       type: DataTypes.INTEGER,
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  otp.associate = (models) => {
+  otp.associate = (models: any) => {
     otp.belongsTo(models.Users, {
       foreignKey: "createdBy",
       as: "Owner",
