@@ -31,34 +31,36 @@ export const Otps = (sequelize: any, DataTypes: any) => {
   });
 
   otp.associate = (models: any) => {
-    otp.belongsTo(models.Users, {
-      foreignKey: "createdBy",
-      as: "Owner",
-      sourceKey: "id",
-    });
-    otp.belongsTo(models.Users, {
-      foreignKey: "updatedBy",
-      as: "Updater",
-      sourceKey: "id",
-    });
-    otp.belongsTo(models.Users, {
-      foreignKey: "userId",
-      as: "User",
-      sourceKey: "id",
-    });
-    otp.belongsTo(models.MailComms, {
-      foreignKey: "mailCommId",
-      sourceKey: "id",
-    });
-    otp.belongsTo(models.MailComms, {
-      foreignKey: "smsCommId",
-      sourceKey: "id",
-    });
-    otp.belongsTo(models.Users, {
-      foreignKey: "deletedBy",
-      as: "Destroyer",
-      sourceKey: "id",
-    });
+    if (models.Users && models.MailComms) {
+      otp.belongsTo(models.Users, {
+        foreignKey: "createdBy",
+        as: "Owner",
+        sourceKey: "id",
+      });
+      otp.belongsTo(models.Users, {
+        foreignKey: "updatedBy",
+        as: "Updater",
+        sourceKey: "id",
+      });
+      otp.belongsTo(models.Users, {
+        foreignKey: "userId",
+        as: "User",
+        sourceKey: "id",
+      });
+      otp.belongsTo(models.MailComms, {
+        foreignKey: "mailCommId",
+        sourceKey: "id",
+      });
+      otp.belongsTo(models.MailComms, {
+        foreignKey: "smsCommId",
+        sourceKey: "id",
+      });
+      otp.belongsTo(models.Users, {
+        foreignKey: "deletedBy",
+        as: "Destroyer",
+        sourceKey: "id",
+      });
+    }
   };
 
   return otp;
