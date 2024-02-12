@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+export const MailComms = (sequelize: any, DataTypes: any) => {
   const MailComms = sequelize.define("MailComms", {
     id: {
       type: DataTypes.INTEGER,
@@ -50,35 +50,37 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  MailComms.associate = (models) => {
-    MailComms.belongsTo(models.Users, {
-      foreignKey: "createdBy",
-      as: "Owner",
-      sourceKey: "id",
-    });
-    MailComms.belongsTo(models.Users, {
-      foreignKey: "updatedBy",
-      as: "Updater",
-      sourceKey: "id",
-    });
-    MailComms.belongsTo(models.Users, {
-      foreignKey: "userId",
-      as: "User",
-      sourceKey: "id",
-    });
-    MailComms.belongsTo(models.CommunicationTemplates, {
-      foreignKey: "templateId",
-      sourceKey: "id",
-    });
-    MailComms.hasOne(models.Otps, {
-      foreignKey: "mailCommId",
-      sourceKey: "id",
-    });
-    MailComms.belongsTo(models.Users, {
-      foreignKey: "deletedBy",
-      as: "Destroyer",
-      sourceKey: "id",
-    });
+  MailComms.associate = (models: any) => {
+    if (models.Users && models.Otps && models.CommunicationTemplates) {
+      MailComms.belongsTo(models.Users, {
+        foreignKey: "createdBy",
+        as: "Owner",
+        sourceKey: "id",
+      });
+      MailComms.belongsTo(models.Users, {
+        foreignKey: "updatedBy",
+        as: "Updater",
+        sourceKey: "id",
+      });
+      MailComms.belongsTo(models.Users, {
+        foreignKey: "userId",
+        as: "User",
+        sourceKey: "id",
+      });
+      MailComms.belongsTo(models.CommunicationTemplates, {
+        foreignKey: "templateId",
+        sourceKey: "id",
+      });
+      MailComms.hasOne(models.Otps, {
+        foreignKey: "mailCommId",
+        sourceKey: "id",
+      });
+      MailComms.belongsTo(models.Users, {
+        foreignKey: "deletedBy",
+        as: "Destroyer",
+        sourceKey: "id",
+      });
+    }
   };
 
   return MailComms;

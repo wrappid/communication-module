@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+export const CommunicationTemplates = (sequelize: any, DataTypes: any) => {
   const CommunicationTemplates = sequelize.define("CommunicationTemplates", {
     id: {
       type: DataTypes.INTEGER,
@@ -75,34 +75,41 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  CommunicationTemplates.associate = (models) => {
-    CommunicationTemplates.belongsTo(models.Users, {
-      foreignKey: "createdBy",
-      as: "Owner",
-      sourceKey: "id",
-    });
-    CommunicationTemplates.belongsTo(models.Users, {
-      foreignKey: "updatedBy",
-      as: "Updater",
-      sourceKey: "id",
-    });
-    CommunicationTemplates.hasMany(models.MailComms, {
-      foreignKey: "mailCommId",
-      sourceKey: "id",
-    });
-    CommunicationTemplates.hasMany(models.SmsComms, {
-      foreignKey: "smsCommId",
-      sourceKey: "id",
-    });
-    CommunicationTemplates.hasMany(models.WhatsAppComms, {
-      foreignKey: "smsCommId",
-      sourceKey: "id",
-    });
-    CommunicationTemplates.belongsTo(models.Users, {
-      foreignKey: "deletedBy",
-      as: "Destroyer",
-      sourceKey: "id",
-    });
+  CommunicationTemplates.associate = (models: any) => {
+    if (
+      models.Users &&
+      models.MailComms &&
+      models.SmsComms &&
+      models.WhatsAppComms
+    ) {
+      CommunicationTemplates.belongsTo(models.Users, {
+        foreignKey: "createdBy",
+        as: "Owner",
+        sourceKey: "id",
+      });
+      CommunicationTemplates.belongsTo(models.Users, {
+        foreignKey: "updatedBy",
+        as: "Updater",
+        sourceKey: "id",
+      });
+      CommunicationTemplates.hasMany(models.MailComms, {
+        foreignKey: "mailCommId",
+        sourceKey: "id",
+      });
+      CommunicationTemplates.hasMany(models.SmsComms, {
+        foreignKey: "smsCommId",
+        sourceKey: "id",
+      });
+      CommunicationTemplates.hasMany(models.WhatsAppComms, {
+        foreignKey: "smsCommId",
+        sourceKey: "id",
+      });
+      CommunicationTemplates.belongsTo(models.Users, {
+        foreignKey: "deletedBy",
+        as: "Destroyer",
+        sourceKey: "id",
+      });
+    }
   };
 
   return CommunicationTemplates;

@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+export const WhatsAppComms = (sequelize: any, DataTypes: any) => {
   const WhatsAppComms = sequelize.define("WhatsAppComms", {
     id: {
       type: DataTypes.INTEGER,
@@ -43,31 +43,33 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  WhatsAppComms.associate = (models) => {
-    WhatsAppComms.belongsTo(models.Users, {
-      foreignKey: "createdBy",
-      as: "Owner",
-      sourceKey: "id",
-    });
-    WhatsAppComms.belongsTo(models.Users, {
-      foreignKey: "updatedBy",
-      as: "Updater",
-      sourceKey: "id",
-    });
-    WhatsAppComms.belongsTo(models.Users, {
-      foreignKey: "userId",
-      as: "User",
-      sourceKey: "id",
-    });
-    WhatsAppComms.belongsTo(models.CommunicationTemplates, {
-      foreignKey: "templateId",
-      sourceKey: "id",
-    });
-    WhatsAppComms.belongsTo(models.Users, {
-      foreignKey: "deletedBy",
-      as: "Destroyer",
-      sourceKey: "id",
-    });
+  WhatsAppComms.associate = (models: any) => {
+    if (models.Users && models.CommunicationTemplates) {
+      WhatsAppComms.belongsTo(models.Users, {
+        foreignKey: "createdBy",
+        as: "Owner",
+        sourceKey: "id",
+      });
+      WhatsAppComms.belongsTo(models.Users, {
+        foreignKey: "updatedBy",
+        as: "Updater",
+        sourceKey: "id",
+      });
+      WhatsAppComms.belongsTo(models.Users, {
+        foreignKey: "userId",
+        as: "User",
+        sourceKey: "id",
+      });
+      WhatsAppComms.belongsTo(models.CommunicationTemplates, {
+        foreignKey: "templateId",
+        sourceKey: "id",
+      });
+      WhatsAppComms.belongsTo(models.Users, {
+        foreignKey: "deletedBy",
+        as: "Destroyer",
+        sourceKey: "id",
+      });
+    }
   };
 
   return WhatsAppComms;
