@@ -1,0 +1,39 @@
+{
+    "table": "CommunicationHistories",
+    "database": "application",
+    "attributes": {
+        "id": {
+            "type": "INTEGER",
+            "primaryKey": true,
+            "autoIncrement": true
+        },
+        "comType": {
+            "type": "STRING",
+            "defaultValue": ""
+        },
+        "to": {
+            "type": "STRING",
+            "defaultValue": ""
+        },
+        "sub": {
+            "type": "STRING",
+            "defaultValue": ""
+        },
+        "status": {
+            "type": "STRING",
+            "defaultValue": ""
+        },
+        "deletedAt": {
+            "type": "DATE",
+            "allowNull": true
+        },
+        "createdAt": {
+            "type": "DATE",
+            "allowNull": true
+        },
+        "updatedAt": {
+            "type": "DATE",
+            "allowNull": true
+        }
+    }
+}

@@ -1,0 +1,145 @@
+{
+    "table": "CommunicationTemplates",
+    "database": "application",
+    "attribute": {
+        "id": {
+            "type": "INTEGER",
+            "primaryKey": true,
+            "autoIncrement": true
+        },
+        "name": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "type": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "subject": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "header": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "contentType": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "message": {
+            "type": "TEXT",
+            "defaultValue": null
+        },
+        "footer": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "sampleSubject": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "sampleMessage": {
+            "type": "TEXT",
+            "defaultValue": null
+        },
+        "config": {
+            "type": "JSONB",
+            "defaultValue": null
+        },
+        "externalTemplateId": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "externalStatus": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "externalReason": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "_status": {
+            "type": "STRING"
+        },
+        "extraInfo": {
+            "type": "JSONB",
+            "defaultValue": null
+        },
+        "isActive": {
+            "type": "BOOLEAN",
+            "defaultValue": true
+        },
+        "deletedAt": {
+            "type": "DATE",
+            "allowNull": true
+        }
+    },
+    "associations": [
+        {
+            "data": [
+                {
+                    "data": {
+                        "as": "Owner",
+                        "sourceKey": "id",
+                        "foreignKey": "createdBy"
+                    },
+                    "type": "belongsTo"
+                },
+                {
+                    "data": {
+                        "as": "Updater",
+                        "sourceKey": "id",
+                        "foreignKey": "updatedBy"
+                    },
+                    "type": "belongsTo"
+                },
+                {
+                    "data": {
+                        "as": "Destroyer",
+                        "sourceKey": "id",
+                        "foreignKey": "deletedBy"
+                    },
+                    "type": "belongsTo"
+                }
+            ],
+            "model": "Users"
+        },
+        {
+            "model": "MailComms",
+            "data": [
+                {
+                    "type": "hasMany",
+                    "data": {
+                        "foreignKey": "mailCommId",
+                        "sourceKey": "id"
+                    }
+                }
+            ]
+        },
+        {
+            "model": "SmsComms",
+            "data": [
+                {
+                    "type": "hasMany",
+                    "data": {
+                        "foreignKey": "smsCommId",
+                        "sourceKey": "id"
+                    }
+                }
+            ]
+        },
+        {
+            "model": "WhatsAppComms",
+            "data": [
+                {
+                    "type": "hasMany",
+                    "data": {
+                        "foreignKey": "smsCommId",
+                        "sourceKey": "id"
+                    }
+                }
+            ]
+        }
+    ]
+}
