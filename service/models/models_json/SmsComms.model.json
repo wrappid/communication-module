@@ -1,0 +1,117 @@
+{
+    "table": "SmsComms",
+    "database": "application",
+    "attribute": {
+        "id": {
+            "type": "INTEGER",
+            "primaryKey": true,
+            "autoIncrement": true
+        },
+        "type": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "from": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "to": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "retryCount": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "status": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "attachemnts": {
+            "type": "STRING",
+            "defaultValue": null
+        },
+        "variable": {
+            "type": "JSONB",
+            "defaultValue": null
+        },
+        "extraInfo": {
+            "type": "JSONB",
+            "defaultValue": null
+        },
+        "isActive": {
+            "type": "BOOLEAN",
+            "defaultValue": true
+        },
+        "_status": {
+            "type": "STRING"
+        },
+        "deletedAt": {
+            "type": "DATE",
+            "allowNull": true
+        }
+    },
+    "associatiions": [
+        {
+            "data": [
+                {
+                    "data": {
+                        "as": "Owner",
+                        "sourceKey": "id",
+                        "foreignKey": "createdBy"
+                    },
+                    "type": "belongsTo"
+                },
+                {
+                    "data": {
+                        "as": "Updater",
+                        "sourceKey": "id",
+                        "foreignKey": "updatedBy"
+                    },
+                    "type": "belongsTo"
+                },
+                {
+                    "data": {
+                        "as": "Destroyer",
+                        "sourceKey": "id",
+                        "foreignKey": "deletedBy"
+                    },
+                    "type": "belongsTo"
+                },
+                {
+                    "data": {
+                        "foreignKey": "userId",
+                        "as": "User",
+                        "sourceKey": "id"
+                    },
+                    "type": "belongsTo"
+                }
+            ],
+            "model": "Users"
+        },
+        {
+            "model": "CommunicationTemplates",
+            "data": [
+                {
+                    "type": "belongsTo",
+                    "data": {
+                        "foreignKey": "templateId",
+                        "sourceKey": "id"
+                    }
+                }
+            ]
+        },
+        {
+            "model": "Otps",
+            "data": [
+                {
+                    "type": "belongsTo",
+                    "data": {
+                        "foreignKey": "smsCommId",
+                        "sourceKey": "id"
+                    }
+                }
+            ]
+        }
+    ]
+}
