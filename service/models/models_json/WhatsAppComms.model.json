@@ -88,19 +88,7 @@
                 {
                     "type": "belongsTo",
                     "data": {
-                        "oreignKey": "templateId",
-                        "sourceKey": "id"
-                    }
-                }
-            ]
-        },
-        {
-            "model": "Otps",
-            "data": [
-                {
-                    "type": "hasOne",
-                    "data": {
-                        "oreignKey": "smsCommId",
+                        "foreignKey": "templateId",
                         "sourceKey": "id"
                     }
                 }
