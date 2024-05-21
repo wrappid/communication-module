@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://https//github.com/wrappid/wrappid-module/compare/v0.0.2...v0.0.3) (2024-05-21)
+
+
+### Bug Fixes
+
+* **global:** :bug: model json fix ([002991c](https://https//github.com/wrappid/wrappid-module/commit/002991c161fb093e8e727fe159b2424ae47ea7f8)), closes [#25](https://https//github.com/wrappid/wrappid-module/issues/25)
+* **global:** :bug: remove all models from models registry ([7d94041](https://https//github.com/wrappid/wrappid-module/commit/7d94041d9dc91278b522a60c4482a32911e92f4b)), closes [#25](https://https//github.com/wrappid/wrappid-module/issues/25)
+
 ### 0.0.2 (2024-05-20)
 
 
