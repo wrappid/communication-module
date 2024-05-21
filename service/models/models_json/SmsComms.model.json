@@ -1,7 +1,7 @@
 {
     "table": "SmsComms",
     "database": "application",
-    "attribute": {
+    "attributes": {
         "id": {
             "type": "INTEGER",
             "primaryKey": true,
@@ -51,7 +51,7 @@
             "allowNull": true
         }
     },
-    "associatiions": [
+    "associations": [
         {
             "data": [
                 {

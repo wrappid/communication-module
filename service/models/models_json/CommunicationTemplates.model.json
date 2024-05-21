@@ -1,7 +1,7 @@
 {
     "table": "CommunicationTemplates",
     "database": "application",
-    "attribute": {
+    "attributes": {
         "id": {
             "type": "INTEGER",
             "primaryKey": true,
