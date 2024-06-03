@@ -1,97 +1,92 @@
 {
-    "table": "Otps",
-    "database": "application",
-    "attributes": {
-        "id": {
-            "type": "INTEGER",
-            "primaryKey": true,
-            "autoIncrement": true
-        },
-        "otp": {
-            "type": "STRING",
-            "defaultValue": null
-        },
-        "type": {
-            "type": "STRING",
-            "defaultValue": "sms"
-        },
-        "extraInfo": {
-            "type": "JSONB",
-            "defaultValue": null
-        },
-        "isActive": {
-            "type": "BOOLEAN",
-            "defaultValue": true
-        },
-        "_status": {
-            "type": "STRING"
-        },
-        "deletedAt": {
-            "type": "DATE",
-            "allowNull": true
-        }
+  "table": "Otps",
+  "database": "application",
+  "attributes": {
+    "id": {
+      "type": "INTEGER",
+      "primaryKey": true,
+      "autoIncrement": true
     },
-    "associations": [
+    "otp": {
+      "type": "STRING",
+      "defaultValue": null
+    },
+    "type": {
+      "type": "STRING",
+      "defaultValue": "sms"
+    },
+    "_status": {
+      "type": "STRING"
+    },
+    "isActive": {
+      "type": "BOOLEAN",
+      "defaultValue": true
+    },
+    "deletedAt": {
+      "type": "DATE",
+      "allowNull": true
+    },
+    "extraInfo": {
+      "type": "JSONB",
+      "defaultValue": null
+    }
+  },
+  "associations": [
+    {
+      "data": [
         {
-            "data": [
-                {
-                    "data": {
-                        "as": "Owner",
-                        "sourceKey": "id",
-                        "foreignKey": "createdBy"
-                    },
-                    "type": "belongsTo"
-                },
-                {
-                    "data": {
-                        "as": "Updater",
-                        "sourceKey": "id",
-                        "foreignKey": "updatedBy"
-                    },
-                    "type": "belongsTo"
-                },
-                {
-                    "data": {
-                        "as": "Destroyer",
-                        "sourceKey": "id",
-                        "foreignKey": "deletedBy"
-                    },
-                    "type": "belongsTo"
-                },
-                {
-                    "type": "belongsTo",
-                    "data": {
-                        "foreignKey": "userId",
-                        "as": "User",
-                        "sourceKey": "id"
-                    }
-                }
-            ],
-            "model": "Users"
+          "data": {
+            "as": "Owner",
+            "sourceKey": "id",
+            "foreignKey": "createdBy"
+          },
+          "type": "belongsTo"
         },
         {
-            "model": "MailComms",
-            "data": [
-                {
-                    "type": "belongsTo",
-                    "data": {
-                        "foreignKey": "mailCommId",
-                        "sourceKey": "id"
-                    }
-                }
-            ]
+          "data": {
+            "as": "Updater",
+            "sourceKey": "id",
+            "foreignKey": "updatedBy"
+          },
+          "type": "belongsTo"
         },
         {
-            "model": "MailComms",
-            "data": [
-                {
-                    "type": "belongsTo",
-                    "data": {
-                        "foreignKey": "smsCommId",
-                        "sourceKey": "id"
-                    }
-                }
-            ]
+          "data": {
+            "as": "User",
+            "sourceKey": "id",
+            "foreignKey": "userId"
+          },
+          "type": "belongsTo"
+        },
+        {
+          "data": {
+            "as": "Destroyer",
+            "sourceKey": "id",
+            "foreignKey": "deletedBy"
+          },
+          "type": "belongsTo"
         }
-    ]
+      ],
+      "model": "Users"
+    },
+    {
+      "data": [
+        {
+          "data": {
+            "sourceKey": "id",
+            "foreignKey": "smsCommId"
+          },
+          "type": "belongsTo"
+        },
+        {
+          "data": {
+            "sourceKey": "id",
+            "foreignKey": "mailCommId"
+          },
+          "type": "belongsTo"
+        }
+      ],
+      "model": "CommunicationHistories"
+    }
+  ]
 }
