@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://https//github.com/wrappid/wrappid-module/compare/v0.0.4...v0.0.5) (2024-10-26)
+
+
+### Features
+
+* **core:** :sparkles: communication history page add three tabs sms, WhatsApp, email ([132f6dc](https://https//github.com/wrappid/wrappid-module/commit/132f6dc7cf0faaabc7dbb8ee42505a3ce5561f2d)), closes [#29](https://https//github.com/wrappid/wrappid-module/issues/29)
+
 ### [0.0.4](https://https//github.com/wrappid/wrappid-module/compare/v0.0.3...v0.0.4) (2024-06-05)
 
 
