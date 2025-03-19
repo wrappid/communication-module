@@ -1,0 +1,117 @@
+{
+  "table": "SmsComms",
+  "database": "application",
+  "attributes": {
+    "id": {
+      "type": "INTEGER",
+      "primaryKey": true,
+      "autoIncrement": true
+    },
+    "to": {
+      "type": "STRING",
+      "defaultValue": null
+    },
+    "from": {
+      "type": "STRING",
+      "defaultValue": null
+    },
+    "type": {
+      "type": "STRING",
+      "defaultValue": null
+    },
+    "status": {
+      "type": "STRING",
+      "defaultValue": null
+    },
+    "_status": {
+      "type": "STRING"
+    },
+    "isActive": {
+      "type": "BOOLEAN",
+      "defaultValue": true
+    },
+    "variable": {
+      "type": "JSONB",
+      "defaultValue": null
+    },
+    "deletedAt": {
+      "type": "DATE",
+      "allowNull": true
+    },
+    "extraInfo": {
+      "type": "JSONB",
+      "defaultValue": null
+    },
+    "retryCount": {
+      "type": "STRING",
+      "defaultValue": null
+    },
+    "attachemnts": {
+      "type": "STRING",
+      "defaultValue": null
+    }
+  },
+  "associations": [
+    {
+      "data": [
+        {
+          "data": {
+            "as": "Owner",
+            "sourceKey": "id",
+            "foreignKey": "createdBy"
+          },
+          "type": "belongsTo"
+        },
+        {
+          "data": {
+            "as": "Updater",
+            "sourceKey": "id",
+            "foreignKey": "updatedBy"
+          },
+          "type": "belongsTo"
+        },
+        {
+          "data": {
+            "as": "Destroyer",
+            "sourceKey": "id",
+            "foreignKey": "deletedBy"
+          },
+          "type": "belongsTo"
+        },
+        {
+          "data": {
+            "as": "User",
+            "sourceKey": "id",
+            "foreignKey": "userId"
+          },
+          "type": "belongsTo"
+        }
+      ],
+      "model": "Users"
+    },
+    {
+      "data": [
+        {
+          "data": {
+            "sourceKey": "id",
+            "foreignKey": "templateId"
+          },
+          "type": "belongsTo"
+        }
+      ],
+      "model": "CommunicationTemplates"
+    },
+    {
+      "data": [
+        {
+          "data": {
+            "sourceKey": "id",
+            "foreignKey": "smsCommId"
+          },
+          "type": "belongsTo"
+        }
+      ],
+      "model": "Otps"
+    }
+  ]
+}

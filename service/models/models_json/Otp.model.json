@@ -1,0 +1,92 @@
+{
+  "table": "Otps",
+  "database": "application",
+  "attributes": {
+    "id": {
+      "type": "INTEGER",
+      "primaryKey": true,
+      "autoIncrement": true
+    },
+    "otp": {
+      "type": "STRING",
+      "defaultValue": null
+    },
+    "type": {
+      "type": "STRING",
+      "defaultValue": "sms"
+    },
+    "_status": {
+      "type": "STRING"
+    },
+    "isActive": {
+      "type": "BOOLEAN",
+      "defaultValue": true
+    },
+    "deletedAt": {
+      "type": "DATE",
+      "allowNull": true
+    },
+    "extraInfo": {
+      "type": "JSONB",
+      "defaultValue": null
+    }
+  },
+  "associations": [
+    {
+      "data": [
+        {
+          "data": {
+            "as": "Owner",
+            "sourceKey": "id",
+            "foreignKey": "createdBy"
+          },
+          "type": "belongsTo"
+        },
+        {
+          "data": {
+            "as": "Updater",
+            "sourceKey": "id",
+            "foreignKey": "updatedBy"
+          },
+          "type": "belongsTo"
+        },
+        {
+          "data": {
+            "as": "User",
+            "sourceKey": "id",
+            "foreignKey": "userId"
+          },
+          "type": "belongsTo"
+        },
+        {
+          "data": {
+            "as": "Destroyer",
+            "sourceKey": "id",
+            "foreignKey": "deletedBy"
+          },
+          "type": "belongsTo"
+        }
+      ],
+      "model": "Users"
+    },
+    {
+      "data": [
+        {
+          "data": {
+            "sourceKey": "id",
+            "foreignKey": "smsCommId"
+          },
+          "type": "belongsTo"
+        },
+        {
+          "data": {
+            "sourceKey": "id",
+            "foreignKey": "mailCommId"
+          },
+          "type": "belongsTo"
+        }
+      ],
+      "model": "CommunicationHistories"
+    }
+  ]
+}
