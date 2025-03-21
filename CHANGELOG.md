@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://https//github.com/wrappid/wrappid-module/compare/v0.0.5...v0.0.6) (2025-03-21)
+
+
+### Bug Fixes
+
+* **config:** :ambulance: correctwrappid.meta.json ([c875dce](https://https//github.com/wrappid/wrappid-module/commit/c875dced5ffec64d4e1743213a76a953ea832b7a)), closes [#19](https://https//github.com/wrappid/wrappid-module/issues/19)
+* **config:** :pushpin: fix dependencies issues ([5cd47c1](https://https//github.com/wrappid/wrappid-module/commit/5cd47c1921eea7e5d0efe62e62d969979d77a759)), closes [#31](https://https//github.com/wrappid/wrappid-module/issues/31)
+* **core:** :zap: merge from template ([6f90320](https://https//github.com/wrappid/wrappid-module/commit/6f903202f086b1fd5aea6d9647717966091786df)), closes [#24](https://https//github.com/wrappid/wrappid-module/issues/24)
+
 ### [0.0.5](https://https//github.com/wrappid/wrappid-module/compare/v0.0.4...v0.0.5) (2024-10-26)
 
 
